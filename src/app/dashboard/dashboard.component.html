@@ -1,0 +1,18 @@
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span (click)="irHome()">App IDAT</span>&nbsp;&nbsp;
+    &nbsp;
+    <button mat-flat-button (click)="irPost()">Post</button>
+    &nbsp;
+    <button mat-flat-button (click)="irProduct()">Product</button>
+    &nbsp;
+    <button mat-flat-button (click)="irCategory()">Category</button>
+    <span class="example-spacer"></span>    
+    <button (click)="salir()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>
+<hr />
+<router-outlet></router-outlet>
