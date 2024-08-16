@@ -8,6 +8,7 @@ import { ProductListaComponent } from './dashboard/product/product-lista/product
 import { CategoryListaComponent } from './dashboard/category/category-lista/category-lista.component';
 import { PostListaComponent } from './dashboard/post/post-lista/post-lista.component';
 import { authGuard } from './auth.guard';
+import { CategoryDetalleComponent } from './dashboard/category/category-detalle/category-detalle.component';
 
 export const routes: Routes = [
     {path: "login", component: LoginComponent},
@@ -17,6 +18,7 @@ export const routes: Routes = [
             {path: "home", component: HomeComponent},
             {path: "product", component: ProductListaComponent},
             {path: "category", component: CategoryListaComponent},
+            {path: "category/:id", component: CategoryDetalleComponent},
             {path: "post", component: PostListaComponent}
         ]
     },

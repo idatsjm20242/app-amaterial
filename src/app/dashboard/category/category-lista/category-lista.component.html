@@ -1,8 +1,7 @@
-<table mat-table [dataSource]="categories" class="mat-elevation-z8">
+<button mat-raised-button color="primary" 
+  (click)="irCrearCategoria()">Nuevo Categoria</button>
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-  
+<table mat-table [dataSource]="categories" class="mat-elevation-z8">
     <!-- Position Column -->
     <ng-container matColumnDef="categoryid">
       <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -23,5 +22,6 @@
       
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+    (click)="irDetalleCategoria(row.categoryid)"></tr>
   </table>
