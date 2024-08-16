@@ -1,1 +1,26 @@
-<p>category-detalle works!</p>
+<div class="module-header">
+    <div class="left">
+        <h3>{{formTitulo}}</h3>
+    </div>
+    <div class="right">
+        <button mat-raised-button color="primary">
+            Guardar
+        </button>        
+    </div>
+</div>
+<hr />
+<div class="form-container">
+    <form class="form" [formGroup]="categoryForm">
+
+        <mat-form-field>
+            <mat-label>Nombre:</mat-label>
+            <input matInput type="text" name="categoryname" 
+            formControlName="categoryname">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Descripción:</mat-label>
+            <input matInput type="text" name="description" 
+            formControlName="description">
+        </mat-form-field>
+    </form>
+</div>
