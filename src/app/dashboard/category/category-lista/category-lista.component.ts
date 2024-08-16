@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { MaterialModule } from '../../../angular-material/material/material.module';
+import { CategoryService } from '../category.service';
+import { Category } from '../category';
 
 
 export interface PeriodicElement {
@@ -29,6 +31,20 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrl: './category-lista.component.css'
 })
 export class CategoryListaComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['categoryid', 'categoryname', 
+    'description'];
   dataSource = ELEMENT_DATA;
+  categories: Category[] = []
+
+  constructor(private categoryService: CategoryService){
+
+  }
+
+  ngOnInit(): void {
+    this.categoryService.getAllCategory()
+    .subscribe((data) => {
+      //console.log(data)
+      this.categories = data
+    })
+  }
 }
